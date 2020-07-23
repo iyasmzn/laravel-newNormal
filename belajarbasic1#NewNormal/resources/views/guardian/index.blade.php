@@ -7,6 +7,7 @@
 	<table border="1" style="width: 100%;">
 		<thead>
 			<tr>
+				<th>No</th>
 				<th>Nama</th>
 				<th>NIK</th>
 				<th>Gender</th>
@@ -17,12 +18,14 @@
 			</tr>
 		</thead>
 		<tbody>
+			<?php $no = 1;?>
 			@foreach($guardians as $guardian)
 			<tr>
+				<td>{{ $no++ }}</td>
 				<td>{{ $guardian->name }}</td>
 				<td>{{ $guardian->nik }}</td>
-				<td>{{ $guardian->phone }}</td>
 				<td>{{ $guardian->gender == 'l' ? 'laki-laki' : 'perempuan' }}</td>
+				<td>{{ $guardian->phone }}</td>
 				<td>{{ $guardian->birth_date }}</td>
 				<td>{{ $guardian->address }}</td>
 				<td>{{ $guardian->is_parent ? 'Yes' : 'No' }}</td>

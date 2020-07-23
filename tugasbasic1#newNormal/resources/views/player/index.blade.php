@@ -21,7 +21,7 @@
 					<td>{{ $player->name }}</td>
 					<td>{{ $player->gender ? 'Male' : 'Female' }}</td>
 					<td>{{ $player->age }}</td>
-					<td>{{ $player->height }}</td>
+					<td>{{ $player->height }}cm</td>
 					<td>{{ $player->club }}</td>
 				</tr>
 			@endforeach
