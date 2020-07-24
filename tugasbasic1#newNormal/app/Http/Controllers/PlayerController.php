@@ -27,4 +27,25 @@ class PlayerController extends Controller
         $player->save();
         return redirect('players');
     }
+    public function edit($id)
+    {
+        $player = Player::find($id);
+        return view('player.edit', compact('player'));
+    }
+    public function update(Request $request, $id)
+    {
+        $player         = Player::find($id);
+        $player->name   = $request->name;
+        $player->gender = $request->gender;
+        $player->age    = $request->age;
+        $player->height = $request->height;
+        $player->club   = $request->club;
+        $player->save();
+        return redirect('/players');
+    }
+    public function delete($id)
+    {
+        Player::find($id)->delete();
+        return redirect('players');
+    }
 }

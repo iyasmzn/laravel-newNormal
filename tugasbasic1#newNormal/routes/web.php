@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/players', 'PlayerController@index');
 Route::get('/players/create', 'PlayerController@create');
 Route::post('/players/store', 'PlayerController@store');
+Route::get('/players/edit/{id}', 'PlayerController@edit');
+Route::put('/players/update/{id}', 'PlayerController@update');
+Route::delete('/players/delete/{id}', 'PlayerController@delete');

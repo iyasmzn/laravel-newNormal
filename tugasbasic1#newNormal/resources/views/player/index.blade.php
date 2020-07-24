@@ -4,6 +4,7 @@
 	<title>Players</title>
 </head>
 <body>
+	<a href="/players/create">ADD</a>
 	<table border="1" width="50%">
 		<thead>
 			<th>No</th>
@@ -12,6 +13,7 @@
 			<th>Age</th>
 			<th>Height</th>
 			<th>Club</th>
+			<th>Action</th>
 		</thead>
 		<tbody>
 			<?php $no = 1;?>
@@ -23,6 +25,13 @@
 					<td>{{ $player->age }}</td>
 					<td>{{ $player->height }}cm</td>
 					<td>{{ $player->club }}</td>
+					<td>
+						<a href="/players/edit/{{ $player->id }}">Edit</a>
+						<form action="/players/delete/{{ $player->id }}" method="post">
+							@csrf @method('DELETE')
+							<input type="submit" value="Delete">
+						</form>
+					</td>
 				</tr>
 			@endforeach
 		</tbody>
