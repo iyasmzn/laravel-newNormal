@@ -20,3 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/guardians', 'GuardianController@index');
 Route::get('/guardians/create', 'GuardianController@create');
 Route::post('/guardians/store', 'GuardianController@store');
+Route::get('/guardians/edit/{id}', 'GuardianController@edit');
+Route::put('/guardians/update/{id}', 'GuardianController@update');
+Route::delete('/guardians/delete/{id}', 'GuardianController@delete');
