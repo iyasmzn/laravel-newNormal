@@ -22,9 +22,9 @@ class CreateStudentsTable extends Migration
             $table->text('address');
             $table->date('birth_date');
             $table->enum('departement', ['IPA', 'IPS', 'Agama', 'Bahasa']);
-            $table->integer('height');
-            $table->integer('weight');
-            $table->foreignId('guardians_id');
+            $table->unsignedSmallInteger('height');
+            $table->unsignedSmallInteger('weight');
+            $table->foreignId('guardian_id');
             $table->timestamps();
         });
     }

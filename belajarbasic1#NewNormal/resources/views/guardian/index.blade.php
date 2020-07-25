@@ -9,7 +9,7 @@
 	</style>
 </head>
 <body>
-	<a href="./create.blade.php"></a>
+	<a href="/guardians/create">Create</a>
 	<table border="1" style="width: 100%;">
 		<thead>
 			<tr>
@@ -40,7 +40,7 @@
 					<button>
 						<a href="/guardians/edit/{{ $guardian->id }}">Edit</a>
 					</button>
-					<form action="/guardians/delete/{{ $guardian->id }" method="post">
+					<form action="/guardians/delete/{{ $guardian->id }}" method="post">
 						@csrf @method('DELETE')
 						<button>Delete</button>
 					</form>
