@@ -4,7 +4,7 @@
 	<title>Iyasmzn | @yield('title')</title>
 	@yield('style')
 </head>
-<body>
+<body style="margin: 0;">
 	@include('layout.navbar')
 	@yield('content')
 </body>
