@@ -3,43 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Model\Club;
-use App\Model\Player;
 use Illuminate\Http\Request;
 
-class PlayerController extends Controller
+class ClubController extends Controller
 {
     public function __construct()
     {
-        $this->model = new Player();
+        $this->model = new Club();
     }
     public function index()
     {
-        $players = $this->model->all();
-        return view('player.index', compact('players'));
+        $clubs = $this->model->all();
+        return view('club.index', compact('clubs'));
     }
     public function create()
     {
-        $clubs = Club::all();
-        return view('player.create', compact('clubs'));
+        return view('club.create');
     }
     public function store(Request $request)
     {
         $this->model->create($request->all());
-        return redirect('players');
+        return redirect('clubs');
     }
     public function edit($id)
     {
         $this->model->find($id);
-        return view('player.edit', compact('player'));
+        return view('club.edit', compact('club'));
     }
     public function update(Request $request, $id)
     {
         $this->model->find($id)->update($request->all());
-        return redirect('/players');
+        return redirect('/clubs');
     }
     public function delete($id)
     {
         $this->model->find($id)->delete();
-        return redirect('players');
+        return redirect('clubs');
     }
 }

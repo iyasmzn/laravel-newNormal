@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Edit</title>
-</head>
-<body>
+@extends('layout.app')
+
+@section('title', 'Player Data Edit')
+
+@section('content')
 	<h1>Edit Player Data</h1>
 	<form action="/players/update/{{ $player->id }}" method="post">
 		@csrf
@@ -35,12 +34,11 @@
 			<tr>
 				<td>Club</td>
 				<td>:</td>
-				<td><input type="text" name="club" value="{{ $player->club }}"></td>
+				<td><input type="text" name="club_id" value="{{ $player->club_id }}"></td>
 			</tr>
 			<tr>
 				<td colspan="3"><input type="Submit" value="Submit"></td>
 			</tr>
 		</table>
 	</form>
-</body>
-</html>
+@endsection

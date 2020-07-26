@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Players</title>
-</head>
-<body>
+@extends('layout.app')
+
+@section('title', 'Players')
+
+@section('content')
 	<a href="/players/create">ADD</a>
 	<table border="1" width="50%">
 		<thead>
@@ -24,7 +23,7 @@
 					<td>{{ $player->gender ? 'Male' : 'Female' }}</td>
 					<td>{{ $player->age }}</td>
 					<td>{{ $player->height }}cm</td>
-					<td>{{ $player->club }}</td>
+					<td>{{ $player->club->name }}</td>
 					<td>
 						<a href="/players/edit/{{ $player->id }}">Edit</a>
 						<form action="/players/delete/{{ $player->id }}" method="post">
@@ -36,5 +35,4 @@
 			@endforeach
 		</tbody>
 	</table>
-</body>
-</html>
+@endsection

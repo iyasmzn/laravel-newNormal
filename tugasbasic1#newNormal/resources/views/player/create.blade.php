@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Create</title>
-</head>
-<body>
+@extends('layout.app')
+
+@section('title', 'Player Form')
+
+@section('content')
 	<h1>Input Player Data</h1>
 	<form action="/players/store" method="post">
 		@csrf
@@ -34,12 +33,19 @@
 			<tr>
 				<td>Club</td>
 				<td>:</td>
-				<td><input type="text" name="club"></td>
+				<td>
+					<select name="club_id">
+					@foreach($clubs as $club)
+						<option value="{{ $club->id }}">
+							{{ $club->name }}
+						</option>
+					@endforeach
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<td colspan="3"><input type="Submit" value="Submit"></td>
 			</tr>
 		</table>
 	</form>
-</body>
-</html>
+@endsection

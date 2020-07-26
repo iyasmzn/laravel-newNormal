@@ -19,3 +19,10 @@ Route::post('/players/store', 'PlayerController@store');
 Route::get('/players/edit/{id}', 'PlayerController@edit');
 Route::put('/players/update/{id}', 'PlayerController@update');
 Route::delete('/players/delete/{id}', 'PlayerController@delete');
+
+Route::get('/clubs', 'ClubController@index');
+Route::get('/clubs/create', 'ClubController@create');
+Route::post('/clubs/store', 'ClubController@store');
+Route::get('/clubs/edit/{id}', 'ClubController@edit');
+Route::put('/clubs/update/{id}', 'ClubController@update');
+Route::delete('/clubs/delete/{id}', 'ClubController@delete');

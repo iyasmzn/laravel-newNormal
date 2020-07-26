@@ -19,7 +19,7 @@ class CreatePlayersTable extends Migration
             $table->boolean('gender');
             $table->integer('age');
             $table->integer('height');
-            $table->string('club');
+            $table->foreignId('club_id');
             $table->timestamps();
         });
     }
