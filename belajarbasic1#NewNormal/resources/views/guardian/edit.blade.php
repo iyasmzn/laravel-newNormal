@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Create Wali</title>
+@extends('layout.app')
+
+@section('title', 'Edit The Wali')
+
+@section('style')
 	<style type="text/css">
 		.input {
 			border: none;
@@ -21,8 +22,8 @@
 			color: white;
 		}
 	</style>
-</head>
-<body>
+@endsection
+@section('content')
 	<h1>Guardian Form</h1>
 	<form action="/guardians/update/{{ $guardian->id }}" method="post">
 		@csrf
@@ -74,5 +75,4 @@
 			</tr>
 		</table>
 	</form>
-</body>
-</html>
+@endsection

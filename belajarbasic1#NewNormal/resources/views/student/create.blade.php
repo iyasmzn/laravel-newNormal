@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Add Student Data</title>
+@extends('layout.app')
+
+@section('title', 'Student Form')
+
+@section('style')
 	<style type="text/css">
 		.input {
 			border: none;
@@ -20,8 +21,8 @@
 			color: white;
 		}
 	</style>
-</head>
-<body>
+@endsection
+@section('content')
 	<h1>Student Form</h1>
 	<form action="/students/store" method="post">
 		@csrf
@@ -95,5 +96,4 @@
 		</label><br><br>
 		<input type="submit" value="Submit">
 	</form>
-</body>
-</html>
+@endsection

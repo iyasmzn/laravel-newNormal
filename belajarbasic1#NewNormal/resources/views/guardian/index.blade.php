@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Guardians</title>
-	<style type="text/css">
-		button {
-			margin: 5px 0px;
-		}
-	</style>
-</head>
-<body>
+@extends('layout.app')
+
+@section('title', 'The Wali')
+
+@section('content')
+	<h1>The Wali</h1>
 	<a href="/guardians/create">Create</a>
 	<table border="1" style="width: 100%;">
 		<thead>
@@ -51,5 +46,4 @@
 			@endforeach
 		</tbody>
 	</table>
-</body>
-</html>
+@endsection

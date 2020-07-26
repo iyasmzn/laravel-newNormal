@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Students</title>
-</head>
-<body>
+@extends('layout.app')
+
+@section('title', 'Students')
+
+@section('content')
 	<h1>Students List</h1>
 	<a href="/students/create">Add Data</a>
 	<table border="1" style="width: 100%;">
@@ -49,5 +48,4 @@
  			@endforeach
  		</tbody>
 	</table>
-</body>
-</html>
+@endsection

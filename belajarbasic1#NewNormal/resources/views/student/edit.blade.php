@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Edit Student Data</title>
+@extends('layout.app')
+
+@section('title', 'Edit Student Data')
+
+@section('style')
 	<style type="text/css">
 		.input {
 			border: none;
@@ -20,8 +21,8 @@
 			color: white;
 		}
 	</style>
-</head>
-<body>
+@endsection
+@section('content')
 	<h1>Student Form</h1>
 	<form action="/students/update/{{ $student->id }}" method="post">
 		@csrf @method('PUT')
@@ -90,5 +91,4 @@
 		</label><br><br>
 		<input type="submit" value="Submit">
 	</form>
-</body>
-</html>
+@endsection
