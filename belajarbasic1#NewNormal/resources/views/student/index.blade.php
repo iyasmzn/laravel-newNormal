@@ -15,7 +15,7 @@
  			<th>Class</th>
  			<th>Address</th>
  			<th>Birth Date</th>
- 			<th>Departement</th>
+ 			<th>Major</th>
  			<th>Height</th>
  			<th>Weight</th>
  			<th>The Guardian</th>
@@ -27,15 +27,15 @@
  			<tr>
  				<td>{{ $no++ }}</td>
  				<td>{{ $student->name }}</td>
- 				<td>{{ $student->gender }}</td>
+ 				<td>{{ $student->gender == 'l' ? 'Male' : 'Female' }}</td>
  				<td>{{ $student->nis }}</td>
  				<td>{{ $student->class }}</td>
  				<td>{{ $student->address }}</td>
  				<td>{{ $student->birth_date }}</td>
- 				<td>{{ $student->departement }}</td>
+ 				<td>{{ $student->major }}</td>
  				<td>{{ $student->height }}cm</td>
  				<td>{{ $student->weight }}kg</td>
- 				<td>{{ $student->guardian_id }}</td>
+ 				<td>{{ $student->guardian->name }}</td>
  				<td>
 					<button>
 						<a href="/students/edit/{{ $student->id }}">Edit</a>

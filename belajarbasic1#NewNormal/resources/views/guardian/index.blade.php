@@ -21,6 +21,7 @@
 				<th>Birth</th>
 				<th>Address</th>
 				<th>Guardian Biological Status</th>
+				<th>Students</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -36,6 +37,7 @@
 				<td>{{ $guardian->birth_date }}</td>
 				<td>{{ $guardian->address }}</td>
 				<td>{{ $guardian->is_parent ? 'Yes' : 'No' }}</td>
+				<td>{{ $guardian->students()->count() }}</td>
 				<td>
 					<button>
 						<a href="/guardians/edit/{{ $guardian->id }}">Edit</a>

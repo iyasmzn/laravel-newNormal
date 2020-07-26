@@ -65,12 +65,12 @@
 		</label><br><br>
 
 		<label>
-			departement
-			<select name="departement">
-				<option value="IPA" {{ $student->departement == 'IPA' ? 'selected' : null }}>IPA</option>
-				<option value="IPS" {{ $student->departement == 'IPS' ? 'selected' : null }}>IPS</option>
-				<option value="Agama" {{ $student->departement == 'Agama' ? 'selected' : null }}>Agama</option>
-				<option value="Bahasa" {{ $student->departement == 'Bahasa' ? 'selected' : null }}>Bahasa</option>
+			majors
+			<select name="major">
+				<option value="IPA" {{ $student->major == 'IPA' ? 'selected' : null }}>IPA</option>
+				<option value="IPS" {{ $student->major == 'IPS' ? 'selected' : null }}>IPS</option>
+				<option value="Agama" {{ $student->major == 'Agama' ? 'selected' : null }}>Agama</option>
+				<option value="Bahasa" {{ $student->major == 'Bahasa' ? 'selected' : null }}>Bahasa</option>
 			</select>
 		</label><br><br>
 

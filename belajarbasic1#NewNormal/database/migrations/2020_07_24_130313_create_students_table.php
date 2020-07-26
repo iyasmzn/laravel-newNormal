@@ -21,7 +21,7 @@ class CreateStudentsTable extends Migration
             $table->enum('class', ['10', '11', '12']);
             $table->text('address');
             $table->date('birth_date');
-            $table->enum('departement', ['IPA', 'IPS', 'Agama', 'Bahasa']);
+            $table->enum('major', ['IPA', 'IPS', 'Agama', 'Bahasa']);
             $table->unsignedSmallInteger('height');
             $table->unsignedSmallInteger('weight');
             $table->foreignId('guardian_id');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Guardian;
 use App\Model\Student;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class StudentController extends Controller
     }
     public function create()
     {
-        return view('student.create');
+        $guardians = Guardian::all();
+        return view('student.create', compact('guardians'));
     }
     public function store(Request $request)
     {

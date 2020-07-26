@@ -65,8 +65,8 @@
 		</label><br><br>
 
 		<label>
-			departement
-			<select name="departement">
+			major
+			<select name="major">
 				<option value="IPA">IPA</option>
 				<option value="IPS">IPS</option>
 				<option value="Agama">Agama</option>
@@ -85,8 +85,13 @@
 		</label><br><br>
 
 		<label>
-			guardian_id
-			<input class="input" type="text" name="guardian_id">
+			Guardian
+			<select name="guardian_id">
+				@foreach($guardians as $guardian)
+				<option value="{{ $guardian->id }}">{{ $guardian->name }}</option>
+				@endforeach
+				<option></option>
+			</select>
 		</label><br><br>
 		<input type="submit" value="Submit">
 	</form>
