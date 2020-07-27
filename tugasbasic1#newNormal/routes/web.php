@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
+Route::get('/', 'HomeController@index');
 
 Route::get('/players', 'PlayerController@index');
 Route::get('/players/create', 'PlayerController@create');
@@ -26,3 +27,9 @@ Route::post('/clubs/store', 'ClubController@store');
 Route::get('/clubs/edit/{id}', 'ClubController@edit');
 Route::put('/clubs/update/{id}', 'ClubController@update');
 Route::delete('/clubs/delete/{id}', 'ClubController@delete');
+
+Route::get('/login', 'AuthController@login');
+Route::get('/register', 'AuthController@register');
+Route::post('/registration-process', 'AuthController@registrationProcess');
+Route::post('/login-process', 'AuthController@loginProcess');
+Route::post('/logout', 'AuthController@logout');

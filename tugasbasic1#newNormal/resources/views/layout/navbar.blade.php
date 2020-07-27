@@ -17,6 +17,13 @@
 </style>
 
 <nav>
+	<span>{{ auth()->check() ? auth()->user()->name : 'XXX' }}</span>
+	||
 	<a class="a" href="/clubs">Clubs</a>
 	<a class="a" href="/players">Players</a>
+	||
+	<form method="post" action="/logout">
+		@csrf
+		<input type="submit" value="Logout">
+	</form>
 </nav>
