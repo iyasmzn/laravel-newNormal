@@ -1,8 +1,11 @@
 <style type="text/css">
 	nav {
+		color: white;
+	}
+	nav {
 		width: 100%;
-		background-color: black;
-		padding: 20px 10px;
+		height: 50px;
+		background-color: gray;
 		margin-bottom: 20px;
 	}
 	.a {
@@ -14,16 +17,36 @@
 		margin: 15px;
 		width: 100%;height: 100%;
 	}
+	nav table {
+		width: 100%;
+		height: 100%;
+	}
+	td {
+		border-right: 1px solid white;
+	}
 </style>
 
 <nav>
-	<span>{{ auth()->check() ? auth()->user()->name : 'XXX' }}</span>
-	||
-	<a class="a" href="/clubs">Clubs</a>
-	<a class="a" href="/players">Players</a>
-	||
-	<form method="post" action="/logout">
-		@csrf
-		<input type="submit" value="Logout">
-	</form>
+	<table>
+		<tr>
+			<td>
+				<span>{{ auth()->check() ? auth()->user()->name : 'XXX' }}</span>
+			</td>
+			<td>
+				<a class="a" href="/">Home</a>
+			</td>
+			<td>
+				<a class="a" href="/clubs">Clubs</a>
+			</td>
+			<td>
+				<a class="a" href="/players">Players</a>
+			</td>
+			<td>
+				<form method="post" action="/logout">
+					@csrf
+					<input type="submit" value="Logout">
+				</form>
+			</td>
+		</tr>
+	</table>
 </nav>

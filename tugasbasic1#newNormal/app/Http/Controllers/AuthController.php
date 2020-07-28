@@ -18,7 +18,7 @@ class AuthController extends Controller
     }
     public function registrationProcess(Request $request)
     {
-        $encryptPassword = bcrypt($request->password());
+        $encryptPassword = bcrypt($request->password);
         $request->merge([
             'password' => $encryptPassword,
         ]);
