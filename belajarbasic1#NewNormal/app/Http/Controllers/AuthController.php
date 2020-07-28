@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        // $this->middleware('guest')->except(['logout']);
+        $this->middleware('guest')->only(['login', 'register', 'registrationProcess', 'loginProcess']);
+        $this->middleware('auth')->only(['logout']);
+    }
     public function login()
     {
         return view('auth.login');
