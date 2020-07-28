@@ -9,6 +9,7 @@ class ClubController extends Controller
 {
     public function __construct()
     {
+        $this->middleware('auth');
         $this->model = new Club();
     }
     public function index()
