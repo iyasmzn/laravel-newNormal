@@ -28,7 +28,7 @@ class StudentController extends Controller
     {
         $this->model->create($request->all());
 
-        return redirect("students");
+        return redirect()->route('students');
     }
     public function edit($id)
     {
@@ -39,7 +39,7 @@ class StudentController extends Controller
     {
         $this->model->find($id)->update($request->all());
 
-        return redirect("/students");
+        return redirect()->route('students');
     }
     public function delete($id)
     {

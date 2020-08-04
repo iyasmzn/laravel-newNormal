@@ -14,7 +14,7 @@ class GuardianController extends Controller
     }
     public function index()
     {
-        $guardians = $this->model->all();
+        $guardians = $this->model->orderBy('created_at', 'desc')->get();
 
         return view('guardian.index', compact('guardians'));
     }
@@ -24,6 +24,16 @@ class GuardianController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'name'       => 'required|max:150',
+            'nik'        => 'required|unique:guardians,nik',
+            'gender'     => 'required',
+            'phone'      => 'required|numeric',
+            'birth_date' => 'required|date',
+            'address'    => 'required',
+            'is_parent'  => 'required',
+        ]);
+
         $guard             = $this->model;
         $guard->name       = $request->name;
         $guard->nik        = $request->nik;
@@ -33,7 +43,7 @@ class GuardianController extends Controller
         $guard->address    = $request->address;
         $guard->is_parent  = $request->is_parent;
         $guard->save();
-        return redirect("guardians");
+        return redirect()->route('guardians');
     }
     public function edit($id)
     {
@@ -42,6 +52,15 @@ class GuardianController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name'       => 'required|max:150',
+            'nik'        => 'required|unique:guardians,nik,' . $id . ',id',
+            'gender'     => 'required',
+            'phone'      => 'required|numeric',
+            'birth_date' => 'required|date',
+            'address'    => 'required',
+            'is_parent'  => 'required',
+        ]);
         $guard             = $this->model->find($id);
         $guard->name       = $request->name;
         $guard->nik        = $request->nik;
@@ -51,11 +70,11 @@ class GuardianController extends Controller
         $guard->address    = $request->address;
         $guard->is_parent  = $request->is_parent;
         $guard->save();
-        return redirect("/guardians");
+        return redirect()->route('guardians');
     }
     public function delete($id)
     {
         $this->model->find($id)->delete();
-        return redirect('/guardians');
+        return redirect()->route('guardians');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('title', 'The Wali')
 
@@ -17,6 +17,7 @@
 				<th>Address</th>
 				<th>Guardian Biological Status</th>
 				<th>Students</th>
+				<th>Created At</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -33,6 +34,7 @@
 				<td>{{ $guardian->address }}</td>
 				<td>{{ $guardian->is_parent ? 'Yes' : 'No' }}</td>
 				<td>{{ $guardian->students()->count() }}</td>
+				<td>{{ $guardian->created_at }}</td>
 				<td>
 					<button>
 						<a href="/guardians/edit/{{ $guardian->id }}">Edit</a>
