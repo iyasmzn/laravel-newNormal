@@ -31,8 +31,8 @@ Route::post('/login-process', 'AuthController@loginProcess');
 Route::post('/logout', 'AuthController@logout');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+    Route::get('/', 'HomeController@index')->middleware('verified');
 
     Route::get('/guardians', 'GuardianController@index')->name('guardians');
     Route::get('/guardians/create', 'GuardianController@create')->name('guardians_create');
@@ -49,7 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/students/delete/{id}', 'StudentController@delete');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::prefix('/admin')->namespace('Admin')->name('admin.')->group(function () {
     // Route::get('/users', 'UserController@index')->name('users.index');
