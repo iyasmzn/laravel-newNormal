@@ -17,7 +17,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/players', 'PlayerController@index');
 Route::get('/players/create', 'PlayerController@create');
 Route::post('/players/store', 'PlayerController@store');
-Route::get('/players/edit/{id}', 'PlayerController@edit');
+Route::get('/players/edit/{id}', 'PlayerController@edit')->where('id', '[0-9]+');
 Route::put('/players/update/{id}', 'PlayerController@update');
 Route::delete('/players/delete/{id}', 'PlayerController@delete');
 
