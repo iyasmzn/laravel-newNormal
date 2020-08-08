@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>@yield('title') | BangAbid</title>
+	<title>@yield('title') | BangAbidNew</title>
 	@yield('style')
 </head>
 <body>
